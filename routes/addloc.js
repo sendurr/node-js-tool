@@ -1,11 +1,11 @@
-var dblink = require('../db/dbconfig');
+//var dblink = require('../db/dbconfig');
 var express = require('express');
 var router = express.Router();
 
 
 /* add location to db */
 router.get('/', function(req, res) {
-    var db = dblink.db;
+    var db = req.db;
 	var TodoSchema = new db.Schema({
 	  name: String,
 	  completed: Boolean,

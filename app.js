@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var dblink = require('./db/dbconfig');
+//var db_model = require('./model/todo_model');
 /*//db connect
 var mongo = require('mongodb');
 //var monk = require('monk');
@@ -36,10 +37,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Make our db accessible to our router
-/*app.use(function(req,res,next){
+app.use(function(req,res,next){
     req.db = dblink.db;
     next();
-});*/
+});
 
 app.use(function (req, res, next) {
   var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
